@@ -652,13 +652,16 @@ img {
 
 @media (max-width: 700px) {
   .hero {
-    min-height: auto;
+    height: auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
     background-position: center;
   }
 
   .hero-content {
     width: 100%;
-    padding: 28px 22px 70px;
+    padding: 28px 22px 45px;
   }
 
   .logo {
@@ -667,23 +670,56 @@ img {
   }
 
   .information {
-    margin-left: 0;
-    margin-bottom: 28px;
-    min-height: 44px;
-    padding: 0 18px;
+    position: static;
+    transform: none;
+    margin: 28px auto 28px;
+    width: fit-content;
+    max-width: 100%;
+    font-size: clamp(16px, 4.5vw, 22px);
+    padding: 12px 24px;
+    min-height: 52px;
+  }
+
+  .information .material-symbols-outlined {
+    font-size: clamp(26px, 7vw, 36px);
   }
 
   .hero h1 {
-    font-size: clamp(38px, 11vw, 48px);
+    font-size: clamp(40px, 11vw, 54px);
+    line-height: 1.05;
   }
 
   .hero p {
     max-width: 100%;
-    font-size: 18px;
+    font-size: clamp(20px, 5.4vw, 28px);
+    line-height: 1.45;
+  }
+
+  .contact-title-wrapper {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto 45px;
+    padding: 0 22px;
+  }
+
+  .contact-title-wrapper h2 {
+    margin: 0 0 18px;
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.1;
+    color: white;
+  }
+
+  .arrow-icon {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto;
+    font-size: 38px;
   }
 
   .contact-section {
-    padding: 58px 20px 40px;
+    padding: 70px 20px 40px;
   }
 
   .cards {
@@ -739,36 +775,6 @@ img {
     gap: 35px;
   }
 
-  .footer-infos {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
-    gap: 55px;
-    align-items: flex-start;
-  }
-
-  .footer-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-column h3 {
-    margin: 0 0 14px;
-    color: white;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-
-
-  .footer-column a {
-    text-decoration: none;
-  }
-
-  .footer-column a:hover {
-    color: #43c5c8;
-  }
-
   .footer-logo-wrapper {
     display: flex;
     flex-direction: column;
@@ -778,7 +784,6 @@ img {
   .footer-logo {
     width: 180px;
     margin-bottom: 14px;
-
   }
 
   .copyright {
@@ -791,7 +796,6 @@ img {
     line-height: 1.35;
   }
 }
-
 
 /* TRES PETIT MOBILE */
 
@@ -821,4 +825,22 @@ img {
     text-align: start;
   }
 
+}
+
+@media (max-width: 420px) {
+  .hero-content {
+    padding: 22px 22px 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 11vw, 54px);
+  }
+
+  .hero p {
+    font-size: clamp(21px, 5.8vw, 28px);
+  }
+
+  .contact-title-wrapper h2 {
+    font-size: 28px;
+  }
 }
